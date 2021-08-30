@@ -27,6 +27,7 @@ BASENAME=$(basename $1)
 FILENAME=$(echo $1)
 # Prepare the headers
 AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
+
 CONTENT_LENGTH_HEADER="Content-Length: $(stat -c%s "${FILENAME}")"
 
 if [[ -z "$2" ]]; then
@@ -56,7 +57,7 @@ curl \
   -sSL \
   -XPOST \
   -H "${AUTH_HEADER}" \
-  -H "${CONTENT_LENGTH_HEADER}" \
+#  -H "${CONTENT_LENGTH_HEADER}" \
   -H "${CONTENT_TYPE_HEADER}" \
   --upload-file "${FILENAME}" \
   "${UPLOAD_URL}"
