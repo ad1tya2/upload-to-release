@@ -24,7 +24,7 @@ fi
 
 # Expand the filename to allow for glob pattern
 BASENAME=$(basename $1)
-FILENAME=$1
+FILENAME=$(echo $1)
 # Prepare the headers
 AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
 CONTENT_LENGTH_HEADER="Content-Length: $(stat -c%s "${FILENAME}")"
