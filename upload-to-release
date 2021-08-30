@@ -50,6 +50,7 @@ done
 
 # Upload the file
 curl \
+  -f \
   -sSL \
   -XPOST \
   -H "${AUTH_HEADER}" \
